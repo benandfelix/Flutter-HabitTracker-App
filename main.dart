@@ -23,29 +23,21 @@ class MyApp extends StatelessWidget {
 
 //登入頁面區
 class LoginPage extends StatefulWidget {
-  //繼承 StatefulWidget //繼承 StatefulWidget
-  LoginPage({Key? key})
-      : super(
-            key:
-                key); //把 StatefulWidget 的 Key 傳給 LoginPage //把 StatefulWidget 的 Key 傳給 LoginPage
+  //繼承 StatefulWidget 
+  LoginPage({Key? key}): super(key:key); //把 StatefulWidget 的 Key 傳給 LoginPage 
 
   @override
-  _LoginPageState createState() =>
-      _LoginPageState(); //createState 會自動調用build //createState 會自動調用build
+  _LoginPageState createState() => _LoginPageState(); //createState 會自動調用build 
 }
 
 class _LoginPageState extends State<LoginPage> {
-  final GlobalKey<FormState> _formKey = GlobalKey<FormState>(); //控制頁面狀態//控制頁面狀態
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>(); //控制頁面狀態
   final TextEditingController _usernameController = TextEditingController();
-  final TextEditingController _passwordController =
-      TextEditingController(); //帳號密碼//帳號密碼
+  final TextEditingController _passwordController = TextEditingController(); //帳號密碼
   List<Map<String, String>> _registeredUsers = [
     {"username": "user1", "password": "password1"},
     {"username": "user2", "password": "password2"},
-    {
-      "username": "user3",
-      "password": "password3"
-    }, //目前將用戶資料寫在程式碼裡 //目前將用戶資料寫在程式碼裡
+    {"username": "user3", "password": "password3"}, //目前將用戶資料寫在程式碼裡 
   ];
 
   @override
@@ -334,6 +326,7 @@ class _AddHabitPage extends State<AddHabitPage> {
 
   final List<String> frequency = [
     '1 times per week',
+    '2 times per week',
     '3 times per week',
   ];
 
@@ -386,15 +379,11 @@ class _AddHabitPage extends State<AddHabitPage> {
               const SizedBox(height: 30),
               DropdownButtonFormField2(
                 decoration: InputDecoration(
-                  //Add isDense true and zero Padding.
-                  //Add Horizontal padding using buttonPadding and Vertical padding by increasing buttonHeight instead of add Padding here so that The whole TextField Button become clickable, and also the dropdown menu open under The whole TextField Button.
-                  isDense: true,
+                 isDense: true,
                   contentPadding: EdgeInsets.zero,
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(15),
                   ),
-                  //Add more decoration as you want here
-                  //Add label If you want but add hint outside the decoration to be aligned in the button perfectly.
                 ),
                 isExpanded: true,
                 hint: const Text(
@@ -420,7 +409,6 @@ class _AddHabitPage extends State<AddHabitPage> {
                   return null;
                 },
                 onChanged: (value) {
-                  //Do something when changing the item if you want.
                 },
                 onSaved: (value) {
                   selectedFrequency = value.toString();
